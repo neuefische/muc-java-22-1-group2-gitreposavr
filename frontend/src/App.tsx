@@ -5,7 +5,8 @@ function App() {
     const [username, setUsername] = useState("")
 
 
-    const getUser = () => {
+    const getUser = (e: React.FormEvent) => {
+        e.preventDefault();
         fetch("/api/users/" + username)
             .then(response => response.json())
             .then(body => {
@@ -14,14 +15,12 @@ function App() {
             })
     }
 
-
     return (
         <div>
-            <input type={"text"} value={username} onChange={event => setUsername(event.target.value) }/>
-            <button onClick={getUser}>send</button>
-
-
-
+            <form onSubmit={getUser}>
+                <input type={"text"} value={username} onChange={event => setUsername(event.target.value) }/>
+                <button type={"submit"}>send</button>
+            </form>
         </div>
     );
 }
