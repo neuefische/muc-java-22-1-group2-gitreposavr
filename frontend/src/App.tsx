@@ -7,7 +7,7 @@ export default function App(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainPage />} />
-                <Route path="/:id" element={<RepoPage />} />
+                <Route path="/repos/:username" element={<RepoPage />} />
             </Routes>
         </BrowserRouter>
     )

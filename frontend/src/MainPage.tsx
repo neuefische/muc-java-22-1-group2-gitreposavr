@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from "react-router-dom";
 
 function MainPage() {
 
     const [username, setUsername] = useState("")
-
+    const nav = useNavigate();
 
     const getUser = (e: React.FormEvent) => {
         e.preventDefault();
@@ -11,8 +12,7 @@ function MainPage() {
             .then(response => response.json())
             .then(body => {
                 console.log(body)
-
-            })
+            }).then(() => nav("/repos/" + username))
     }
 
     return (
