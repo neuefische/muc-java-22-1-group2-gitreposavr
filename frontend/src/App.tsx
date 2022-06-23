@@ -4,19 +4,24 @@ function App() {
 
     const [username, setUsername] = useState("")
 
-    useEffect(() => {
-        fetch("/api/users/Auamann")
+
+    const getUser = () => {
+        fetch("/api/users/" + username)
             .then(response => response.json())
             .then(body => {
                 console.log(body)
-                setUsername(body.login)
+
             })
-    },[])
+    }
 
 
     return (
         <div>
-            {username}
+            <input type={"text"} value={username} onChange={event => setUsername(event.target.value) }/>
+            <button onClick={getUser}>send</button>
+
+
+
         </div>
     );
 }
