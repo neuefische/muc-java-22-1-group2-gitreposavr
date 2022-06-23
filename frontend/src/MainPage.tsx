@@ -10,9 +10,7 @@ function MainPage() {
         e.preventDefault();
         fetch("/api/users/" + username)
             .then(response => response.json())
-            .then(body => {
-                console.log(body)
-            }).then(() => nav("/repos/" + username))
+            .then(() => nav("/repos/" + username))
     }
 
     return (
