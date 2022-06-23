@@ -5,10 +5,14 @@ import lombok.Data;
 
 @Data
 public class User {
-    
-    String login;
+
+    @JsonProperty("login")
+    String userName;
     long id;
     @JsonProperty("repos_url")
     String reposUrl;
 
+    public User(String userName) {
+        this.userName = userName;
+    }
 }
