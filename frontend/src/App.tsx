@@ -2,23 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
 
-    const [greeting, setGreeting] = useState('')
+    const [username, setUsername] = useState("")
 
     useEffect(() => {
-        fetch('/api/greeting', {
-            method: 'GET',
-            headers: {
-                'Accept': 'text/plain'
-            }
-        })
-            .then(response => response.text())
-            .then(text => setGreeting(text))
-            .catch(err => setGreeting('Da ist etwas schief gelaufen'));
-    }, []);
+        fetch("/api/users/Auamann")
+            .then(response => response.json())
+            .then(body => {
+                console.log(body)
+                setUsername(body.login)
+            })
+    },[])
+
 
     return (
         <div>
-            {greeting}
+            {username}
         </div>
     );
 }

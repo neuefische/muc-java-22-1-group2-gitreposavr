@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-
 public class GitSavrController {
     private final GitSavrService gitSavrService;
 
