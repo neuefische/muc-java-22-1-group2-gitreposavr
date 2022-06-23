@@ -1,2 +1,7 @@
-package com.example.demo;public class GitSavrService {
+package com.example.demo;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class GitSavrService {
 }

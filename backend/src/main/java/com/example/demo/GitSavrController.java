@@ -4,18 +4,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.jni.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+@RequestMapping("/api")
+@RequiredArgsConstructor
 
-    private List<String> greetings = Arrays.asList("Hallo", "Moin", "Servus");
+public class GitSavrController {
+    private final GitSavrService gitSavrService;
 
-    @GetMapping(path="/api/greeting", produces="text/plain")
-    public String hello() {
-        Random rand = new Random();
-        return greetings.get(rand.nextInt(greetings.size()));
+    @GetMapping("/users")
+    List<User> getUserList (){
+        return null;
     }
-
 }
