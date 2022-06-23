@@ -7,6 +7,7 @@ import java.util.Random;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.jni.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GitSavrController {
     private final GitSavrService gitSavrService;
 
-    @GetMapping("/users")
-    List<User> getUserList (){
-        return null;
+    @GetMapping("/users/{username}")
+    User getUserList (@PathVariable String username){
+        return gitSavrService.getUsers(username);
     }
 }
