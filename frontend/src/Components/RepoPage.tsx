@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {GitRepo} from "../models";
 import Repo from "./Repo";
+import axios from "axios";
 
 export default function RepoPage(){
 
@@ -9,8 +10,8 @@ export default function RepoPage(){
     const {username} = useParams();
 
     useEffect(() => {
-        fetch("https://api.github.com/users/" + username + "/repos")
-            .then(response => response.json())
+        axios.get("https://api.github.com/users/" + username + "/repos")
+            .then(response => response.data)
             .then(result => {
                 setRepos(result)
             })

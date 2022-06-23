@@ -1,6 +1,7 @@
 import RepoPage from "./RepoPage";
 import {render} from "@testing-library/react";
 import {MemoryRouter, Routes, Route} from "react-router-dom";
+import axios from "axios";
 
 
 const testResponse = [{
@@ -19,7 +20,7 @@ const testResponse = [{
 test('if components are rendered and correct', () => {
 
     // @ts-ignore
-    jest.spyOn(global, "fetch").mockImplementation((url: string) => {
+    jest.spyOn(axios, "get").mockImplementation((url: string) => {
         expect(url).toEqual("https://api.github.com/users/Testusername/repos")
         return Promise.resolve({testResponse})
     })
