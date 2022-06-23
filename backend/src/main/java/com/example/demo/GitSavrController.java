@@ -1,11 +1,6 @@
 package com.example.demo;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.jni.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +15,6 @@ public class GitSavrController {
 
     @GetMapping("/users/{username}")
     User getUserList (@PathVariable String username){
-        return gitSavrService.getUsers(username);
+        return gitSavrService.getUser(username);
     }
 }
