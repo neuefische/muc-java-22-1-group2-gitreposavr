@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {GitRepo} from "./models";
+import {GitRepo} from "../models";
 import Repo from "./Repo";
 
 export default function RepoPage(){

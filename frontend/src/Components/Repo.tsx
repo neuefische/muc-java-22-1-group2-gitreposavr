@@ -1,4 +1,4 @@
-import {GitRepo} from "./models";
+import {GitRepo} from "../models";
 
 interface RepoProps {
     repo: GitRepo

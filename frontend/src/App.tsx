@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import MainPage from "./MainPage";
-import RepoPage from "./RepoPage";
+import MainPage from "./Components/MainPage";
+import RepoPage from "./Components/RepoPage";
 
 export default function App(){
     return(

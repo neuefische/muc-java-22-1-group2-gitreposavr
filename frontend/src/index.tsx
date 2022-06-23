@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import MainPage from './MainPage';
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
 
