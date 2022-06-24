@@ -6,6 +6,8 @@ function MainPage() {
     const [username, setUsername] = useState("")
     const nav = useNavigate();
 
+    
+
     const getUser = (e: React.FormEvent) => {
         e.preventDefault();
         fetch("/api/users/" + username)
@@ -19,6 +21,9 @@ function MainPage() {
                 <input type={"text"} value={username} onChange={event => setUsername(event.target.value) }/>
                 <button type={"submit"}>send</button>
             </form>
+
+            <button onClick={()=>nav("/repos")}>Saved Repos</button>
+
         </div>
     );
 }
