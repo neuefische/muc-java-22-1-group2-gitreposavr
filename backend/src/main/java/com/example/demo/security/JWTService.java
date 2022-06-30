@@ -11,7 +11,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @Service
-public class JWTUtils {
+public class JWTService {
 
     private final String secret = "secret-token";
 

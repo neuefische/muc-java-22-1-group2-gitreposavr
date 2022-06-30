@@ -19,9 +19,9 @@ import io.jsonwebtoken.Claims;
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final JWTUtils jwtService;
+    private final JWTService jwtService;
 
-    public JwtAuthFilter(JWTUtils jwtService) {
+    public JwtAuthFilter(JWTService jwtService) {
         this.jwtService = jwtService;
     }
 
