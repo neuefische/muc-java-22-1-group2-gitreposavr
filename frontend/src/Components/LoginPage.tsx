@@ -1,5 +1,8 @@
-import {useState} from "react";
-import {Link} from "react-router-dom";
+import {FormEvent, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
+import {loginUser} from "../Services/apiServices";
+import {LoginResponse} from "../models";
 
 
 export default function LoginPage() {
@@ -7,7 +10,15 @@ export default function LoginPage() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-    function login() {}
+    const nav = useNavigate()
+
+    function login(e: FormEvent) {
+        e.preventDefault();
+
+        loginUser(username, password)
+            .then((response: LoginResponse) => localStorage.setItem('jwt', response.token))
+            .then(() => nav("/main"))
+    }
 
 
     return (

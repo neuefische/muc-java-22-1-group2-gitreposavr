@@ -8,7 +8,10 @@ function MainPage() {
 
     const getUser = (e: React.FormEvent) => {
         e.preventDefault();
-        fetch("/api/users/" + username)
+        fetch("/api/users/" + username, {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem('jwt')
+            }})
             .then(response => response.json())
             .then(() => nav("/repos/" + username))
     }

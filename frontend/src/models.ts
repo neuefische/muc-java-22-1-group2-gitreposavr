@@ -5,3 +5,7 @@ export interface GitRepo {
     description: string
     html_url: string
 }
+
+export interface LoginResponse {
+    token: string
+}
