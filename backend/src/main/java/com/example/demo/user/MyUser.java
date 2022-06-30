@@ -9,14 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection= "userCollection")
 @NoArgsConstructor
-
 public class MyUser {
     @Id
     String id;
-
-    String userName;
-
+    String username;
     String password;
-
     long githubId;
 }
